@@ -9,6 +9,8 @@
     <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="canonical" href="https://i7telecomisp.com.br/">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="assets/fonts/LineIcons.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
     <link rel="icon" href="assets/images/favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="assets/images/favicon.png">
@@ -23,11 +25,8 @@
     <meta name="twitter:title" content="I7 Telecom">
     <meta name="twitter:description" content="Sua melhor conexão em São José do Rio Preto.">
     <meta name="twitter:image" content="assets/images/logo.png">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="assets/css/LineIcons.2.0.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.4.5.2.min.css">
-    <link rel="stylesheet" href="assets/css/default.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preload" href="assets/css/all.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/css/all.css"></noscript>
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
@@ -73,7 +72,10 @@
                     <div class="col-lg-12">
                         <nav class="navbar navbar-expand-lg">
                             <a class="navbar-brand" href="index.html">
-                                <img src="assets/images/logo.png" alt="Logo">
+                                <picture>
+                                    <source srcset="assets/images/logo.webp" type="image/webp">
+                                    <img src="assets/images/logo.png" alt="Logo" width="150" height="50">
+                                </picture>
                             </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="toggler-icon"></span>
@@ -108,9 +110,9 @@
             </div>
         </div>
         <div id="home" class="header_hero d-lg-flex align-items-center">
-            <img class="shape shape-1" src="assets/images/shape-1.svg" alt="shape">
-            <img class="shape shape-2" src="assets/images/shape-2.svg" alt="shape">
-            <img class="shape shape-3" src="assets/images/shape-3.svg" alt="shape">
+            <img class="shape shape-1" src="assets/images/shape-1.svg" alt="shape" width="100" height="100">
+            <img class="shape shape-2" src="assets/images/shape-2.svg" alt="shape" width="100" height="100">
+            <img class="shape shape-3" src="assets/images/shape-3.svg" alt="shape" width="100" height="100">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-7">
@@ -127,7 +129,7 @@
             </div>
             <div class="header_image d-flex align-items-end">
                 <div class="image wow fadeInRightBig" data-wow-duration="1.3s" data-wow-delay="1.8s">
-                    <img src="assets/images/header_app.png" alt="header App" width="1200px">
+                        <img src="assets/images/header_app.png" alt="header App" width="669" height="446" fetchpriority="high">
                     <!--<img src="assets/images/dots.svg" alt="dots" class="dots">-->
                 </div>
             </div>
@@ -138,7 +140,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="section_title text-center pb-25 features-section-title">
-                        <img src="assets/images/logo.png" alt="Logo" class="sobre-logo">
+                        <img src="assets/images/logo.png" alt="Logo" class="sobre-logo" width="200" height="80">
                         <h4 class="title">Sobre a I7 Telecom</h4>
                         <p class="features-description">A I7 Telecom é uma empresa líder em provedores de internet em São José do Rio Preto, oferecendo serviços de alta qualidade, velocidade e suporte excepcional para residências e empresas. Nossa missão é conectar pessoas e negócios com tecnologia avançada e atendimento personalizado.</p>
                     </div>
@@ -247,10 +249,10 @@
         <div class="container">
             <div class="download_app">
                 <div class="download_shape">
-                    <img src="assets/images/shape-5.svg" alt="shape">
+                    <img src="assets/images/shape-5.svg" alt="shape" width="100" height="100">
                 </div>
                 <div class="download_shape_2">
-                    <img src="assets/images/shape-6.png" alt="shape">
+                    <img src="assets/images/shape-6.png" alt="shape" width="334" height="168">
                 </div>
                 <div class="download_app_content">
                     <h3 class="download_title">Teste de Velocidade</h3>
@@ -261,7 +263,10 @@
                 </div>
                 <div class="download_app_image">
                     <div class="image wow fadeInRightBig" data-wow-duration="1.3s" data-wow-delay="0.5s">
-                        <img src="assets/images/download.png" alt="teste de velocidade">
+                        <picture>
+                            <source srcset="assets/images/download.webp" type="image/webp">
+                            <img src="assets/images/download.png" alt="teste de velocidade" width="400" height="300">
+                        </picture>
                     </div>
                 </div>
             </div>
@@ -363,14 +368,7 @@
     </section>
     <a href="https://wa.me/551741411197" target="_blank" class="whatsapp-fixed" data-toggle="tooltip" data-placement="left" title="Clique aqui caso precise falar conosco!"><i class="lni lni-whatsapp"></i></a>
     <a href="#" class="back-to-top"><i class="lni lni-chevron-up"></i></a>
-    <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="assets/js/vendor/modernizr-3.7.1.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.4.5.2.min.js"></script>
-    <script src="assets/js/jquery.easing.min.js"></script>
-    <script src="assets/js/scrolling-nav.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/all.js"></script>
     <script>
         $(function () {
             $('[data-toggle="tooltip"]').tooltip();
@@ -379,7 +377,34 @@
             setTimeout(function() {
                 $('.whatsapp-fixed').tooltip('show');
             }, 3000);
+
+            // Cookie Consent
+            // if (!localStorage.getItem('cookieConsent')) {
+                $('#cookie-consent').show();
+            // }
+
+            $('#accept-cookies').click(function() {
+                localStorage.setItem('cookieConsent', 'accepted');
+                $('#cookie-consent').hide();
+            });
+
+            $('#decline-cookies').click(function() {
+                localStorage.setItem('cookieConsent', 'declined');
+                $('#cookie-consent').hide();
+                // Optionally disable non-essential cookies
+            });
         });
     </script>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent" class="cookie-consent" style="display: none;">
+        <div class="cookie-content">
+            <p>Este site utiliza cookies para melhorar sua experiência, analisar o tráfego e personalizar conteúdo. Ao continuar navegando, você concorda com o uso de cookies conforme nossa <a href="politica-privacidade.html" style="color: #3ca35c;">Política de Privacidade</a>.</p>
+            <div class="cookie-buttons">
+                <button id="accept-cookies" class="cookie-btn accept">Aceitar</button>
+                <button id="decline-cookies" class="cookie-btn decline">Recusar</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

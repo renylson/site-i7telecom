@@ -49,28 +49,40 @@ $(document).ready(function() {
             }
         }, 300);
         
-        // Teste de download
-        const testFile = 'https://speed.cloudflare.com/__down?bytes=104857600'; // 100MB
-        const startTime = Date.now();
-        
-        fetch(testFile)
-            .then(response => response.blob())
-            .then(blob => {
-                const endTime = Date.now();
-                const duration = (endTime - startTime) / 1000; // segundos
-                const bytes = blob.size;
-                const bits = bytes * 8;
-                downloadSpeed = (bits / duration / 1000000).toFixed(2); // Mbps
-            })
-            .catch(err => {
-                console.error('Erro no teste de download:', err);
-                downloadSpeed = 'Erro';
-            });
-        
-        // Teste de upload simulado
-        setTimeout(() => {
-            uploadSpeed = (Math.random() * 50 + 10).toFixed(2); // Simulação
-        }, 3000);
+                // Teste de download
+                const testFile = '/api/download';
+                const startTime = Date.now();
+                const numConcurrent = 4;
+                const promises = [];
+                for (let i = 0; i < numConcurrent; i++) {
+                    promises.push(fetch(testFile).then(response => response.blob()));
+                }
+                Promise.all(promises).then(blobs => {
+                    const totalBytes = blobs.reduce((sum, blob) => sum + blob.size, 0);
+                    const endTime = Date.now();
+                    const duration = (endTime - startTime) / 1000; // segundos
+                    const bits = totalBytes * 8;
+                    downloadSpeed = (bits / duration / 1000000).toFixed(2); // Mbps
+                }).catch(err => {
+                    console.error('Erro no teste de download:', err);
+                    downloadSpeed = 'Erro';
+                });
+                
+                // Teste de upload
+                const uploadBlob = new Blob([new ArrayBuffer(10485760)], {type: 'application/octet-stream'}); // 10MB
+                const uploadStart = Date.now();
+                fetch('/api/upload', {
+                    method: 'POST',
+                    headers: {
+                        'x-start-time': uploadStart.toString()
+                    },
+                    body: uploadBlob
+                }).then(response => response.json()).then(data => {
+                    uploadSpeed = data.speed;
+                }).catch(err => {
+                    console.error('Erro no teste de upload:', err);
+                    uploadSpeed = 'Erro';
+                });
     }
     
     function completeTest() {

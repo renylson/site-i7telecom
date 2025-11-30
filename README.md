@@ -4,7 +4,7 @@
 
 🐳 **Execute localmente**: `docker compose up -d --build`
 
-![Screenshot](screenshot.jpg)
+![Screenshot](screenshot.png)
 
 ---
 

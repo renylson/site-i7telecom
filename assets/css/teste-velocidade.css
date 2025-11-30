@@ -1,12 +1,18 @@
 /* Hero Section */
 .speed-hero {
     background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-    padding: 140px 0;
+    padding: 100px 0; /* Mobile-first: smaller padding */
     position: relative;
     overflow: hidden;
     min-height: 100vh;
     display: flex;
     align-items: center;
+}
+
+@media (min-width: 768px) {
+    .speed-hero {
+        padding: 140px 0;
+    }
 }
 
 .speed-hero .shape {
@@ -44,8 +50,14 @@
 
 /* Images */
 .speed-test-image {
-    width: 20%;
+    width: 50%; /* Mobile-first: larger for mobile */
     height: auto;
+}
+
+@media (min-width: 768px) {
+    .speed-test-image {
+        width: 20%;
+    }
 }
 
 /* Buttons */
@@ -63,16 +75,31 @@
 
 /* Results */
 .speed-result {
-    font-size: 3rem;
+    font-size: 2rem; /* Mobile-first: smaller font */
     font-weight: bold;
     color: #28a745;
     margin: 20px 0;
+}
+
+@media (min-width: 768px) {
+    .speed-result {
+        font-size: 3rem;
+    }
 }
 
 .result-item {
     background: rgba(40, 167, 69, 0.1);
     border-radius: 15px;
     border: 2px solid #28a745;
+    padding: 20px;
+    margin-bottom: 20px; /* Add margin for mobile spacing */
+}
+
+@media (min-width: 768px) {
+    .result-item {
+        padding: 30px;
+        margin-bottom: 0; /* No margin on desktop */
+    }
 }
 
 .results-title {
@@ -89,8 +116,14 @@
     background: #fff;
     border-radius: 20px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-    padding: 40px;
+    padding: 40px; /* Mobile-first: smaller padding */
     margin: 30px 0;
+}
+
+@media (min-width: 768px) {
+    .test-card {
+        padding: 40px;
+    }
 }
 
 /* Progress */
